@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'amber-lamp.c456e32e42a4ab311141f023528e8088.r2.cloudflarestorage.com',
+        hostname: '**.public.blob.vercel-storage.com',
         port: '',
         pathname: '**',
       },

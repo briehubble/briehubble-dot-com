@@ -1,5 +1,5 @@
 export const about = {
-  image_url: "BrieHubble.jpeg",
+  image_url: "https://nlgubwdrwbndabug.public.blob.vercel-storage.com/BrieHubble-FPBsRuvPAV8idNCxDO9rWNtve5iR7e.jpeg",
   bio: `
     Brie Hubble is an experienced Software Engineer, based in Los Angeles, CA.
     After spending a decade in the games industry, working on everything from Virtual Reality fitness apps to early childhood educational platforms, she transitioned to fullstack development.
@@ -161,7 +161,7 @@ export const resume = {
       ],
     },
   ],
-  pdf_url: "BrieHubbleProfile.pdf",
+  pdf_url: "https://nlgubwdrwbndabug.public.blob.vercel-storage.com/BrieHubbleProfile-KD7riWUzcMWnnuN82UDS7f8qKji4CP.pdf",
 };
 
 export const contacts = [

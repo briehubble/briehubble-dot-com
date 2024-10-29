@@ -13,6 +13,7 @@
     "@aws-sdk/s3-request-presigner": "^3.679.0",
     "@cloudflare/wrangler": "^1.21.0",
     "@heroicons/react": "^2.1.4",
+    "@vercel/blob": "^0.25.1",
     "@vercel/postgres": "^0.10.0",
     "aws-sdk": "^2.1691.0",
     "clsx": "^2.1.1",

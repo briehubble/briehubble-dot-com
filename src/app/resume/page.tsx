@@ -1,9 +1,7 @@
 'use client';
 
 async function handleDownload() {
-    const response = await fetch(`/api/download/BrieHubbleProfile.pdf`);
-    const blob = await response.blob();
-    const fileUrl = window.URL.createObjectURL(blob);
+    const fileUrl = 'https://nlgubwdrwbndabug.public.blob.vercel-storage.com/BrieHubbleProfile-KD7riWUzcMWnnuN82UDS7f8qKji4CP.pdf';
     const anchor = document.createElement('a');
     anchor.href = fileUrl;
     anchor.download = 'BrieHubbleProfile.pdf';
