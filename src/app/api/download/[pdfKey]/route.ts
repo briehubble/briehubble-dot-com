@@ -2,12 +2,13 @@ import { NextRequest } from "next/server";
 import { GetObjectCommand } from "@aws-sdk/client-s3";
 import { r2 } from "@/app/lib/r2";
 
+type Params = Promise<{ pdfKey: string}>;
+
 export async function GET(
   _request: NextRequest,
-  context: { params: { pdfKey: string } }
-) {
-  const { pdfKey } = context.params;
-  console.log(pdfKey);
+  { params }: { params: Params }
+) : Promise<Response> {
+  const { pdfKey } = await params;
 
   try {
     const pdf = await r2.send(
@@ -27,6 +28,7 @@ export async function GET(
       },
     });
   } catch (err) {
-    console.log("error", err);
+    console.log("Error fetching pdf from S3:", err);
+    return new Response("Error fetching pdf from S3");
   }
 }

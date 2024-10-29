@@ -3,15 +3,13 @@ import { GetObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import { r2 } from "@/app/lib/r2";
 
-type ResponseData = {
-  url: string;
-};
+type Params = Promise<{ imageKey: string }>;
 
 export async function GET(
   _request: NextRequest,
-  context: { params: { imageKey: string } }
-): Promise<ResponseData> {
-  const { imageKey } = context.params;
+  { params }: { params: Params }
+): Promise<Response> {
+  const { imageKey } = await params;
 
   try {
     const command = new GetObjectCommand({

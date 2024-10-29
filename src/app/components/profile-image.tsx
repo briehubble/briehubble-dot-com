@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const getImage = async () => {
   try {
-    const response = await fetch('http://localhost:3000/api/images/BrieHubble.jpeg');
+    const response = await fetch('/api/images/BrieHubble.jpeg');
     if (!response.ok) {
       throw new Error('Failed to fetch image');
     }

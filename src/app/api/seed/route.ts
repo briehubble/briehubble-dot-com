@@ -36,7 +36,7 @@ async function seedLinks() {
   //   )
   // );
 
-  return insertedLinks;
+  // return insertedLinks;
 }
 
 async function seedResume() {
