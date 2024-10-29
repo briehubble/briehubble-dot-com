@@ -15,7 +15,7 @@ export default function WorkExperienceCard(props: {
       <h1>{work_experience.timespan}</h1>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
         {work_experience.technologies.map((technology) => (
-          <div key={technology} className="rounded-md bg-slate-100 px-2 border border-transparent text-sm text-slate-600 transition-all shadow-sm">
+          <div key={technology} className="rounded-md bg-slate-100 px-2 border border-transparent text-xs md:text-sm text-slate-600 transition-all shadow-sm">
             {technology}
           </div>
         ))}
