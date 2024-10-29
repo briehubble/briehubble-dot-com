@@ -6,7 +6,7 @@ export default async function Page() {
 
   return (
     <>
-      <h1>Brie's Links</h1>
+      <h1>Links</h1>
       {links.length > 0 ? (
         <ul>
           {links.map((link) => (

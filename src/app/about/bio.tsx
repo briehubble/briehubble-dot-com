@@ -1,11 +1,6 @@
 import Image from "next/image";
 
-type AboutProps = {
-    imageUrl: string;
-    bio: string;
-}
-
-export default function Bio(props: AboutProps) {
+export default function Bio(props: { imageUrl: string; bio: string }) {
   return (
     <>
       <Image src={props.imageUrl} alt="s3url" width="400" height="400" />

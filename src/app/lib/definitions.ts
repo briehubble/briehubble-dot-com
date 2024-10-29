@@ -37,5 +37,7 @@ export type Education = {
 
 /** A link to a resume pdf */
 export type Resume = {
-    pdf_usr: string;
+    work_experience: WorkExperience[];
+    education: Education[];
+    pdf_url: string;
 }

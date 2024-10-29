@@ -60,7 +60,7 @@ export async function fetchEducation(): Promise<Education[]> {
 
 export async function fetchResume(): Promise<Resume[]> {
     try {
-        const data = await sql<Resume>`SELECT * from links`;
+        const data = await sql<Resume>`SELECT * from resume`;
         return data.rows;
     } catch (error) {
         console.error('Database Error:', error);

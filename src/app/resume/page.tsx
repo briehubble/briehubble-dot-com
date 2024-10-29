@@ -1,25 +1,29 @@
-'use client';
+import { get } from "@vercel/edge-config";
+import DownloadButton from "./download-button";
+import WorkExperienceCard from "./work-experience-card";
+import { Resume } from "../lib/definitions";
+import EducationCard from "./education-card";
 
-async function handleDownload() {
-    const fileUrl = 'https://nlgubwdrwbndabug.public.blob.vercel-storage.com/BrieHubbleProfile-KD7riWUzcMWnnuN82UDS7f8qKji4CP.pdf';
-    const anchor = document.createElement('a');
-    anchor.href = fileUrl;
-    anchor.download = 'BrieHubbleProfile.pdf';
-    anchor.target = "_blank";
-    anchor.click();
-}
+export default async function Page() {
+  const resume = (await get("resume")) as Resume;
 
-export default function Page() {
-  return (
+  return resume ? (
     <>
-      <p>Resume Page</p>
-      <button
-        type="button"
-        className="rounded-md bg-pink-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-pink-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-500"
-        onClick={handleDownload}
-      >
-        Download
-      </button>
+      <div className="grid grid-cols-2 gap-2">
+        {resume.work_experience.map((work) => (
+          <WorkExperienceCard key={work.company} work_experience={work} />
+        ))}
+      </div>
+      <br />
+      <div className="grid grid-cols-2 gap-2">
+        {resume.education.map((ed) => (
+          <EducationCard key={ed.institution} education={ed} />
+        ))}
+      </div>
+      <br />
+      <DownloadButton fileUrl={resume.pdf_url} />
     </>
+  ) : (
+    <p>Loading resume...</p>
   );
 }
