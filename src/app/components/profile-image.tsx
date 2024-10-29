@@ -1,8 +1,9 @@
 import Image from 'next/image';
+import { BASE_URL } from '../lib/constants';
 
 const getImage = async () => {
   try {
-    const response = await fetch('/api/images/BrieHubble.jpeg');
+    const response = await fetch(`${BASE_URL}/api/images/BrieHubble.jpeg`);
     if (!response.ok) {
       throw new Error('Failed to fetch image');
     }

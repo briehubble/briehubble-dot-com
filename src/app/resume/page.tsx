@@ -1,7 +1,7 @@
 'use client';
 
 async function handleDownload() {
-    const response = await fetch('/api/download/BrieHubbleProfile.pdf');
+    const response = await fetch(`/api/download/BrieHubbleProfile.pdf`);
     const blob = await response.blob();
     const fileUrl = window.URL.createObjectURL(blob);
     const anchor = document.createElement('a');
