@@ -1,3 +1,10 @@
+import ProfileImage from "../components/profile-image";
+
 export default function Page() {
-    return <p>About Page</p>;
+  return (
+    <>
+      <ProfileImage />
+      <p>About Page</p>
+    </>
+  );
 }
