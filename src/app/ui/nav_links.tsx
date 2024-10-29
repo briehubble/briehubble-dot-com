@@ -2,7 +2,7 @@
 
 import {
   HomeIcon,
-  DocumentDuplicateIcon,
+  DocumentIcon,
   EnvelopeIcon,
   LinkIcon,
 } from "@heroicons/react/24/outline";
@@ -16,7 +16,7 @@ const links = [
   {
     name: "Resume",
     href: "/resume",
-    icon: DocumentDuplicateIcon,
+    icon: DocumentIcon,
   },
   { name: "Links", href: "/links", icon: LinkIcon },
   { name: "Contact", href: "/contact", icon: EnvelopeIcon },
